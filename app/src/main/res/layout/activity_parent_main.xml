@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="hack.bacon.hackathon.Parent.ParentMainActivity">
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/firstEntryCardView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="8dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/firstEntryBackgroundImage"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/firstEntryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/firstEntryBackgroundImage"
+                android:maxLines="3"
+                android:padding="8dp"
+                android:text="Freddie Rawlins"
+                android:textColor="#222"
+                android:textStyle="bold"
+                android:textSize="22dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/firstEntryName"
+                android:maxLines="3"
+                android:padding="8dp"
+                android:text="Location: %1$s"
+                android:textColor="#666"
+                android:textSize="14dp"
+                android:id="@+id/firstEntryLocationTextView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:padding="8dp"
+                android:text="Last Updated: %1$s"
+                android:textColor="#666"
+                android:textSize="14dp"
+                android:id="@+id/firstEntryLastUpdatedTextView"
+                android:layout_below="@+id/firstEntryLocationTextView"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

@@ -1,13 +1,15 @@
-package hack.bacon.hackathon;
+package hack.bacon.hackathon.Authentication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class LoginActivity extends AppCompatActivity {
+import hack.bacon.hackathon.R;
+
+public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
     }
 }
