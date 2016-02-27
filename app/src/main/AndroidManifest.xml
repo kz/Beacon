@@ -31,9 +31,9 @@
         <activity android:name=".Child.ChildMainActivity" />
         <activity android:name=".Parent.ParentMainActivity" />
         <activity
-            android:name=".Parent.ParentChildActivity"
-            android:label="@string/title_activity_parent_child"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:name=".Parent.DetailedChildActivity"
+            android:label="@string/title_activity_detailed_child"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

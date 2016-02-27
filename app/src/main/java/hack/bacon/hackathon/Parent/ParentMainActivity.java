@@ -1,11 +1,11 @@
 package hack.bacon.hackathon.Parent;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -35,5 +35,10 @@ public class ParentMainActivity extends AppCompatActivity {
 
     @OnClick(R.id.firstEntryCardView)
     public void onFirstEntryCardViewClick() {
+        // Start the detailed child view activity
+        Intent parentChildIntent = new Intent(ParentMainActivity.this, DetailedChildActivity.class);
+        // TODO: Remove hardcoded rendezvous tag
+        parentChildIntent.putExtra("childRenTag", getString(R.string.first_child_ren_tag));
+        startActivity(parentChildIntent);
     }
 }

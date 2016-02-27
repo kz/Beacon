@@ -1,5 +1,6 @@
 package hack.bacon.hackathon.Parent;
 
+import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +21,7 @@ import android.widget.TextView;
 
 import hack.bacon.hackathon.R;
 
-public class ParentChildActivity extends AppCompatActivity {
+public class DetailedChildActivity extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -40,7 +41,7 @@ public class ParentChildActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parent_child);
+        setContentView(R.layout.activity_detailed_child);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -52,13 +53,16 @@ public class ParentChildActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_parent_child, menu);
+        getMenuInflater().inflate(R.menu.menu_detailed_child, menu);
         return true;
     }
 
@@ -105,7 +109,7 @@ public class ParentChildActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_parent_child, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_detailed_child, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
@@ -139,11 +143,11 @@ public class ParentChildActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Location";
                 case 1:
-                    return "SECTION 2";
+                    return "Messages";
                 case 2:
-                    return "SECTION 3";
+                    return "Call/SMS Logs";
             }
             return null;
         }
