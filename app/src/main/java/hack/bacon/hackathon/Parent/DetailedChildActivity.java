@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 import hack.bacon.hackathon.R;
 
-public class DetailedChildActivity extends AppCompatActivity {
+public class    DetailedChildActivity extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -47,6 +47,7 @@ public class DetailedChildActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Freddie Rawlins"); // Title bar with parent name.
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
