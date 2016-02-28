@@ -73,12 +73,6 @@ public class DetailedChildActivity extends AppCompatActivity {
         return true;
     }
 
-    @OnClick(R.id.geofenceSettingsButton)
-    public void geofenceOnClick(Button button) {
-        Intent geofenceIntent = new Intent(this, GeofenceActivity.class);
-        startActivity(geofenceIntent);
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -87,8 +81,9 @@ public class DetailedChildActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.geofenceSettingsButton) {
+            Intent geofenceIntent = new Intent(this, GeofenceActivity.class);
+            startActivity(geofenceIntent);
         }
 
         return super.onOptionsItemSelected(item);

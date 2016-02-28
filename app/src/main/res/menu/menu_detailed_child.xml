@@ -5,6 +5,6 @@
     <item
         android:id="@+id/geofenceSettingsButton"
         android:orderInCategory="100"
-        android:title="GeofenceSettings"
+        android:title="Geofence Settings"
         app:showAsAction="never" />
 </menu>
