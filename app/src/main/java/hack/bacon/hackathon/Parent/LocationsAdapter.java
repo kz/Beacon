@@ -90,7 +90,7 @@ public class LocationsAdapter extends
         // Set item views based on the data model
         TextView latitudeTextView = viewHolder.latitudeTextView;
         latitudeTextView.setText(String.format(latitudeTextView.getText().toString(),
-                String.valueOf(location.getLongitude())));
+                String.valueOf(location.getLatitude())));
 
         TextView longitudeTextView = viewHolder.longitudeTextView;
         longitudeTextView.setText(String.format(longitudeTextView.getText().toString(),
