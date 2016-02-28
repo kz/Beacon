@@ -12,19 +12,20 @@
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/firstEntryCardView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="275dp"
         android:layout_margin="8dp"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="top">
 
             <ImageView
                 android:id="@+id/firstEntryBackgroundImage"
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="180dp"
                 android:layout_alignParentTop="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/child_fred" />
@@ -46,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/firstEntryName"
                 android:maxLines="3"
-                android:padding="8dp"
+                android:paddingLeft="8dp"
                 android:text="Location: 51.5185059, -0.088304"
                 android:textColor="#666"
                 android:textSize="14dp"
@@ -56,7 +57,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="3"
-                android:padding="8dp"
+                android:paddingTop="4dp"
+                android:paddingLeft="8dp"
                 android:text="Last Updated: Just Now"
                 android:textColor="#666"
                 android:textSize="14dp"
@@ -66,5 +68,69 @@
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/secondEntryCardView"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top">
+
+            <ImageView
+                android:id="@+id/secondEntryBackgroundImage"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/child_jack" />
+
+            <TextView
+                android:id="@+id/secondEntryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/secondEntryBackgroundImage"
+                android:maxLines="3"
+                android:padding="8dp"
+                android:text="Jack Barber"
+                android:textColor="#222"
+                android:textStyle="bold"
+                android:textSize="22dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/secondEntryName"
+                android:maxLines="3"
+                android:paddingLeft="8dp"
+                android:text="Location: 49.982359, -0.102753"
+                android:textColor="#666"
+                android:textSize="14dp"
+                android:id="@+id/secondEntryLocationTextView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="3"
+                android:paddingTop="4dp"
+                android:paddingLeft="8dp"
+                android:text="Last Updated: 6 mins ago"
+                android:textColor="#666"
+                android:textSize="14dp"
+                android:id="@+id/secondEntryLastUpdatedTextView"
+                android:layout_below="@+id/secondEntryLocationTextView"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
 
 </RelativeLayout>
