@@ -27,7 +27,7 @@
                 android:layout_height="170dp"
                 android:layout_alignParentTop="true"
                 android:scaleType="centerCrop"
-                android:src="@color/colorPrimary" />
+                android:src="@drawable/child_fred" />
 
             <TextView
                 android:id="@+id/firstEntryName"
@@ -39,7 +39,7 @@
                 android:text="Freddie Rawlins"
                 android:textColor="#222"
                 android:textStyle="bold"
-                android:textSize="22dp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:layout_width="wrap_content"
