@@ -47,7 +47,7 @@
                 android:layout_below="@+id/firstEntryName"
                 android:maxLines="3"
                 android:padding="8dp"
-                android:text="Location: %1$s"
+                android:text="Location: 51.5185059, -0.088304"
                 android:textColor="#666"
                 android:textSize="14dp"
                 android:id="@+id/firstEntryLocationTextView" />
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="3"
                 android:padding="8dp"
-                android:text="Last Updated: %1$s"
+                android:text="Last Updated: Just Now"
                 android:textColor="#666"
                 android:textSize="14dp"
                 android:id="@+id/firstEntryLastUpdatedTextView"
