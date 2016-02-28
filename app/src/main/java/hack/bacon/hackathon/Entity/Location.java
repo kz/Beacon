@@ -41,7 +41,7 @@ public class Location {
     }
 
     public String getDateTimeString() {
-        Date date = new Date(mTimestamp * 1000L);
+        Date date = new Date(mTimestamp * 1L);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss dd-MM-yyyy");
         return simpleDateFormat.format(date);
     }
