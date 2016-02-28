@@ -42,7 +42,7 @@ public class LocationsAdapter extends
             this.context = context;
 
             timeTextView = (TextView) itemView.findViewById(R.id.timeTextView);
-            latitudeTextView = (TextView) itemView.findViewById(R.id.latitudetextView);
+            latitudeTextView = (TextView) itemView.findViewById(R.id.latitudeTextView);
             longitudeTextView = (TextView) itemView.findViewById(R.id.longitudeTextView);
             accuracyTextView = (TextView) itemView.findViewById(R.id.accuracyTextView);
 
@@ -90,7 +90,7 @@ public class LocationsAdapter extends
         // Set item views based on the data model
         TextView latitudeTextView = viewHolder.latitudeTextView;
         latitudeTextView.setText(String.format(latitudeTextView.getText().toString(),
-                String.valueOf(location.getLongitude())));
+                String.valueOf(location.getLatitude())));
 
         TextView longitudeTextView = viewHolder.longitudeTextView;
         longitudeTextView.setText(String.format(longitudeTextView.getText().toString(),

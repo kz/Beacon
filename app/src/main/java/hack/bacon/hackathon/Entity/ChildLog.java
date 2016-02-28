@@ -4,30 +4,40 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ChildLog {
-    private double mLatitude;
-    private double mLongitude;
+    private String mType;
+    private String mSource;
+    private String mRecipient;
     private long mTimestamp;
 
-    public ChildLog(double mLatitude, double mLongitude, long mTimestamp) {
-        this.mLatitude = mLatitude;
-        this.mLongitude = mLongitude;
+    public ChildLog(String mType, String mSource, String mRecipient, long mTimestamp) {
+        this.mType = mType;
+        this.mSource = mSource;
+        this.mRecipient = mRecipient;
         this.mTimestamp = mTimestamp;
     }
 
-    public double getLatitude() {
-        return mLatitude;
+    public String getType() {
+        return mType;
     }
 
-    public void setLatitude(double mLatitude) {
-        this.mLatitude = mLatitude;
+    public void setType(String mType) {
+        this.mType = mType;
     }
 
-    public double getLongitude() {
-        return mLongitude;
+    public String getSource() {
+        return mSource;
     }
 
-    public void setLongitude(double mLongitude) {
-        this.mLongitude = mLongitude;
+    public void setSource(String mSource) {
+        this.mSource = mSource;
+    }
+
+    public String getRecipient() {
+        return mRecipient;
+    }
+
+    public void setRecipient(String mRecipient) {
+        this.mRecipient = mRecipient;
     }
 
     public long getTimestamp() {

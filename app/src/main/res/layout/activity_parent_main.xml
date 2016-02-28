@@ -27,7 +27,7 @@
                 android:layout_height="170dp"
                 android:layout_alignParentTop="true"
                 android:scaleType="centerCrop"
-                android:src="@color/colorPrimary" />
+                android:src="@drawable/child_fred" />
 
             <TextView
                 android:id="@+id/firstEntryName"

@@ -10,28 +10,28 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="273dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Location: %1$s"
-            android:id="@+id/timeTextView"
+            android:text="Type: %1$s"
+            android:id="@+id/typeTextView"
             android:paddingLeft="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Latitude: %1$s"
-            android:id="@+id/latitudetextView"
+            android:text="Source: %1$s"
+            android:id="@+id/sourceTextView"
             android:paddingLeft="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Longitude: %1$s"
-            android:id="@+id/longitudeTextView"
+            android:text="Recipient: %1$s"
+            android:id="@+id/recipientTextView"
             android:paddingLeft="10dp" />
 
     </LinearLayout>
@@ -44,7 +44,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Accuracy: High"
-            android:id="@+id/accuracyTextView" />
+            android:text="Date: %1$s"
+            android:id="@+id/timeTextView" />
     </LinearLayout>
 </LinearLayout>

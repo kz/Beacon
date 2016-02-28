@@ -1,8 +1,8 @@
 package hack.bacon.hackathon.Parent;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import hack.bacon.hackathon.Entity.ChildLog;
 import hack.bacon.hackathon.Entity.Location;
 import hack.bacon.hackathon.R;
 
@@ -20,52 +21,32 @@ public class LogsAdapter extends
 
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder{
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
         public TextView timeTextView;
-        public TextView latitudeTextView;
-        public TextView longitudeTextView;
-        public TextView accuracyTextView;
-
-        private Context context;
+        public TextView typeTextView;
+        public TextView sourceTextView;
+        public TextView recipientTextView;
 
         // We also create a constructor that accepts the entire item row
         // and does the view lookups to find each subview
-        public ViewHolder(View itemView, Context context) {
+        public ViewHolder(View itemView) {
             // Stores the itemView in a public final member variable that can be used
             // to access the context from any ViewHolder instance.
             super(itemView);
 
-            this.context = context;
-
             timeTextView = (TextView) itemView.findViewById(R.id.timeTextView);
-            latitudeTextView = (TextView) itemView.findViewById(R.id.latitudetextView);
-            longitudeTextView = (TextView) itemView.findViewById(R.id.longitudeTextView);
-            accuracyTextView = (TextView) itemView.findViewById(R.id.accuracyTextView);
-
-            itemView.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            Intent mapIntent = new Intent(context, LocationMapActivity.class);
-
-            // Extract latitude and longitude from text views
-            double latitude = Double.parseDouble(latitudeTextView.getText().toString().replace("Latitude: ", ""));
-            double longitude = Double.parseDouble(longitudeTextView.getText().toString().replace("Longitude: ", ""));
-
-            mapIntent.putExtra("latitude", latitude);
-            mapIntent.putExtra("longitude", longitude);
-
-            context.startActivity(mapIntent);
+            typeTextView = (TextView) itemView.findViewById(R.id.typeTextView);
+            sourceTextView = (TextView) itemView.findViewById(R.id.sourceTextView);
+            recipientTextView = (TextView) itemView.findViewById(R.id.recipientTextView);
         }
     }
 
-    private List<Location> mLocations;
+    private List<ChildLog> mChildLog;
 
-    public LogsAdapter(List<Location> locations) {
-        mLocations = locations;
+    public LogsAdapter(List<ChildLog> childLog) {
+        mChildLog = childLog;
     }
 
     @Override
@@ -74,34 +55,36 @@ public class LogsAdapter extends
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.item_location, parent, false);
+        View logView = inflater.inflate(R.layout.item_log, parent, false);
 
         // Return a new holder instance
-        return new ViewHolder(contactView, context);
+        return new ViewHolder(logView);
     }
 
     @Override
     public void onBindViewHolder(LogsAdapter.ViewHolder viewHolder, int position) {
         // Get the data model based on position
-        Location location = mLocations.get(position);
+        ChildLog childLog = mChildLog.get(position);
 
         // Set item views based on the data model
-        TextView latitudeTextView = viewHolder.latitudeTextView;
-        latitudeTextView.setText(String.format(latitudeTextView.getText().toString(),
-                String.valueOf(location.getLongitude())));
+        TextView typeTextView = viewHolder.typeTextView;
+        typeTextView.setText(String.format(typeTextView.getText().toString(),
+                String.valueOf(childLog.getType())));
 
-        TextView longitudeTextView = viewHolder.longitudeTextView;
-        longitudeTextView.setText(String.format(longitudeTextView.getText().toString(),
-                String.valueOf(location.getLongitude())));
+        TextView sourceTextView = viewHolder.sourceTextView;
+        sourceTextView.setText(String.format(sourceTextView.getText().toString(),
+                String.valueOf(childLog.getSource())));
+
+        TextView recipientTextView = viewHolder.recipientTextView;
+        recipientTextView.setText(String.format(recipientTextView.getText().toString(),
+                String.valueOf(childLog.getRecipient())));
 
         TextView timeTextView = viewHolder.timeTextView;
-        timeTextView.setText(String.format(timeTextView.getText().toString(), location.getDateTimeString()));
-
-        TextView accuracyTextView = viewHolder.accuracyTextView;
+        timeTextView.setText(String.format(timeTextView.getText().toString(), childLog.getDateTimeString()));
     }
 
     @Override
     public int getItemCount() {
-        return mLocations.size();
+        return mChildLog.size();
     }
 }

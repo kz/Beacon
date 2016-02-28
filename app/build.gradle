@@ -41,4 +41,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:8.4.0'
     compile 'com.google.android.gms:play-services-location:8.4.0'
     compile 'com.google.android.gms:play-services-location:8.4.0'
+    compile 'commons-lang:commons-lang:2.6'
 }

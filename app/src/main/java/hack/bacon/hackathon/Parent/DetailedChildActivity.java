@@ -47,6 +47,7 @@ public class DetailedChildActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Freddie Rawlins");
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -118,8 +119,6 @@ public class DetailedChildActivity extends AppCompatActivity {
                 case 0:
                     return "Location History";
                 case 1:
-                    return "Messages";
-                case 2:
                     return "Call/SMS Logs";
             }
             return null;
