@@ -1,6 +1,8 @@
 package hack.bacon.hackathon.Entity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Location {
@@ -14,27 +16,33 @@ public class Location {
         this.mTimestamp = mTimestamp;
     }
 
-    public double getmLatitude() {
+    public double getLatitude() {
         return mLatitude;
     }
 
-    public void setmLatitude(double mLatitude) {
+    public void setLatitude(double mLatitude) {
         this.mLatitude = mLatitude;
     }
 
-    public double getmLongitude() {
+    public double getLongitude() {
         return mLongitude;
     }
 
-    public void setmLongitude(double mLongitude) {
+    public void setLongitude(double mLongitude) {
         this.mLongitude = mLongitude;
     }
 
-    public long getmTimestamp() {
+    public long getTimestamp() {
         return mTimestamp;
     }
 
-    public void setmTimestamp(long mTimestamp) {
+    public void setTimestamp(long mTimestamp) {
         this.mTimestamp = mTimestamp;
+    }
+
+    public String getDateTimeString() {
+        Date date = new Date(mTimestamp * 1000L);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss dd-MM-yyyy");
+        return simpleDateFormat.format(date);
     }
 }
