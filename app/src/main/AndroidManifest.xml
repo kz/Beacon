@@ -15,11 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--
-            <service
+        <service
             android:name="com.qredo.device.android.service.LocalServiceImpl"
             android:enabled="true" />
-        -->
 
         <activity android:name=".Authentication.LoginActivity">
             <intent-filter>
