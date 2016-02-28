@@ -1,51 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
     android:background="?android:attr/selectableItemBackground"
-    >
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="273dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Time: %1$s"
             android:id="@+id/timeTextView"
-            android:paddingLeft="10dp" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Latitude: %1$s"
-            android:id="@+id/latitudetextView"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp"
+            android:text="Location: %1$s" />
 
         <TextView
+            android:id="@+id/latitudeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Longitude: %1$s"
+            android:paddingLeft="10dp"
+            android:text="Latitude: %1$s" />
+
+        <TextView
             android:id="@+id/longitudeTextView"
-            android:paddingLeft="10dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Longitude: %1$s" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/accuracyTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Accuracy: High"
-            android:id="@+id/accuracyTextView" />
+            android:text="Accuracy: High" />
     </LinearLayout>
 </LinearLayout>
