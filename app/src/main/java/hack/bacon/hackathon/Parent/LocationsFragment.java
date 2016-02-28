@@ -63,6 +63,7 @@ public class LocationsFragment extends Fragment {
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.locationsRecyclerView);
         mRecyclerView.setAdapter(new LocationsAdapter(mDataset));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setHasFixedSize(true);
 
         return rootView;
     }

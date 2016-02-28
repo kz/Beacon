@@ -1,6 +1,6 @@
 <resources>
     <!--
-    TODO: Before you run your application, you need a Google Maps API key.
+    TODO: Revoke API key after hackathon
 
     To get one, follow this link, follow the directions and press "Create" at the end:
 
@@ -15,5 +15,5 @@
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
     string in this file.
     -->
-    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">YOUR_KEY_HERE</string>
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">AIzaSyD5z0mRNyHSeLh2psG8oJNtxfs_H7nsoM0</string>
 </resources>
