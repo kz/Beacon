@@ -15,8 +15,6 @@ import hack.bacon.hackathon.R;
 
 public class LocationService extends IntentService {
 
-    private VaultManager mVaultManager;
-
     // Must create a default constructor
     public LocationService() {
         super("beacon-location-service");
@@ -30,14 +28,14 @@ public class LocationService extends IntentService {
     private QredoConnection mConnection = new QredoConnection() {
         @Override public void onSuccess(QredoClient client){
             VaultItem item = new VaultItem("child-location");
-            mVaultManager = client.getVaultManager();
+            VaultManager vaultManager = client.getVaultManager();
 
             item.putMetadata("type", "child-location");
             item.putMetadata("timestamp", String.valueOf(System.currentTimeMillis()));
             item.putMetadata("latitude", "51.5185092");
             item.putMetadata("longitude", "-0.088304");
 
-            mVaultManager.put(item, new VaultCallback<VaultItemRef>() {
+            vaultManager.put(item, new VaultCallback<VaultItemRef>() {
 
                 @Override
                 public void onSuccess(VaultItemRef vaultItemRef) {

@@ -6,9 +6,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
+import com.qredo.device.android.QredoClient;
+import com.qredo.device.android.vault.VaultItem;
+import com.qredo.device.android.vault.VaultItemRef;
+import com.qredo.device.android.vault.VaultManager;
+import com.qredo.device.android.vault.callback.VaultCallback;
 
 import hack.bacon.hackathon.Location.AlarmReceiver;
 import hack.bacon.hackathon.Location.LocationService;
+import hack.bacon.hackathon.Qredo.Qredo;
 import hack.bacon.hackathon.R;
 
 public class ChildMainActivity extends AppCompatActivity {
@@ -17,6 +25,32 @@ public class ChildMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child_main);
+
+        QredoClient client = Qredo.getInstance().getQredoClient();
+
+        VaultItem item = new VaultItem("child-location");
+        VaultManager vaultManager = client.getVaultManager();
+
+        item.putMetadata("type", "child-location");
+        item.putMetadata("timestamp", String.valueOf(System.currentTimeMillis()));
+        item.putMetadata("latitude", "51.5185092");
+        item.putMetadata("longitude", "-0.088304");
+
+        vaultManager.put(item, new VaultCallback<VaultItemRef>() {
+
+            @Override
+            public void onSuccess(VaultItemRef vaultItemRef) {
+                Log.i("BEACON", "LOCATION SAVED.");
+            }
+
+            @Override
+            public void onFailure(String reason) {
+                Log.e("BEACON", "FAILURE. Reason: " + reason);
+            }
+
+        });
+
+
     }
 
     public void launchLocationService() {
