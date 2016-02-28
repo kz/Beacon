@@ -48,7 +48,7 @@ public class LocationMapActivity extends FragmentActivity implements OnMapReadyC
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng childPosition = new LatLng(mLatitude, mLongitude);
+        LatLng childPosition = new LatLng(mLatitude,mLongitude);
         // TODO: Remove hardcode
         mMap.addMarker(new MarkerOptions().position(childPosition).title("Position of Freddie Rawlins"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(childPosition));

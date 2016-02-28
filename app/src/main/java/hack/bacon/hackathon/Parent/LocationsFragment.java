@@ -83,9 +83,7 @@ public class LocationsFragment extends Fragment {
         mDataset = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            mDataset.add(new Location(5.03, 5.03, 1456617243));
-            mDataset.add(new Location(5.03, 5.03, 1456617244));
-            mDataset.add(new Location(5.03, 5.03, 1456617245));
+            mDataset.add(new Location(51.5185059, -0.088304, System.currentTimeMillis()));
         }
     }
 
