@@ -14,7 +14,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <service
             android:name="com.qredo.device.android.service.LocalServiceImpl"
             android:enabled="true" />
@@ -47,7 +46,7 @@
 
         <activity
             android:name=".Parent.LocationMapActivity"
-            android:label="@string/title_activity_location_map"></activity>
+            android:label="@string/title_activity_location_map" />
 
         <service
             android:name=".Location.LocationService"
@@ -56,6 +55,8 @@
         <receiver
             android:name=".Location.AlarmReceiver"
             android:process=":remote" />
+
+        <activity android:name=".Parent.GeofenceActivity"></activity>
     </application>
 
 </manifest>

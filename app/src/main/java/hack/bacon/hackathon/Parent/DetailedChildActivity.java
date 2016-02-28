@@ -1,5 +1,6 @@
 package hack.bacon.hackathon.Parent;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,8 +18,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.TextView;
 
+import butterknife.OnClick;
 import hack.bacon.hackathon.R;
 
 public class DetailedChildActivity extends AppCompatActivity {
@@ -68,6 +71,12 @@ public class DetailedChildActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_detailed_child, menu);
         return true;
+    }
+
+    @OnClick(R.id.geofenceSettingsButton)
+    public void geofenceOnClick(Button button) {
+        Intent geofenceIntent = new Intent(this, GeofenceActivity.class);
+        startActivity(geofenceIntent);
     }
 
     @Override

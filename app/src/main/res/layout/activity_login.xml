@@ -40,7 +40,9 @@
         android:layout_below="@+id/usernameTextView"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:textIsSelectable="false"
+        android:singleLine="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -51,7 +53,8 @@
         android:layout_below="@+id/passwordTextView"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/usernameTextBox"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:singleLine="true" />
 
     <Button
         android:layout_width="wrap_content"
