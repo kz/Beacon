@@ -41,6 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     @OnClick(R.id.registerButton)
     public void onClick() {
-        
+
     }
 }
