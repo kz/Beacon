@@ -50,7 +50,7 @@ public class ChildMainActivity extends AppCompatActivity {
 
         });
 
-
+        scheduleAlarm();
     }
 
     public void launchLocationService() {

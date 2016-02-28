@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
             mIsParent = false;
 
             // Attempt Qredo connection
-            QredoClient.bind(getString(R.string.app_secret), "child", "child", this, mConnection);
+            QredoClient.bind(getString(R.string.app_secret), "parent", "parent", this, mConnection);
         } else {
             Toast.makeText(this, "Please enter a valid username and password.", Toast.LENGTH_SHORT).show();
         }
