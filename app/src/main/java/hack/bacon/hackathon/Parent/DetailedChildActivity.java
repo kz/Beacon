@@ -100,8 +100,6 @@ public class DetailedChildActivity extends AppCompatActivity {
                 case 0:
                     return LocationsFragment.newInstance(mChildRenTag);
                 case 1:
-                    return MessagesFragment.newInstance(mChildRenTag);
-                case 2:
                     return LogsFragment.newInstance(mChildRenTag);
                 default:
                     return null;
@@ -111,7 +109,7 @@ public class DetailedChildActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override

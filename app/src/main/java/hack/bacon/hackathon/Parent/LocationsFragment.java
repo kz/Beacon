@@ -79,7 +79,7 @@ public class LocationsFragment extends Fragment {
     }
 
     // TODO: Remove hardcoded dataset
-/*    private void initDataset() {
+    private void initDataset() {
         mDataset = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
@@ -87,9 +87,9 @@ public class LocationsFragment extends Fragment {
             mDataset.add(new Location(5.03, 5.03, 1456617244));
             mDataset.add(new Location(5.03, 5.03, 1456617245));
         }
-    }*/
+    }
 
-    private void initDataset() {
+/*    private void initDataset() {
         mDataset = new ArrayList<>();
 
         QredoClient client = Qredo.getInstance().getQredoClient();
@@ -121,5 +121,5 @@ public class LocationsFragment extends Fragment {
                 }
             }
         });
-    }
+    }*/
 }

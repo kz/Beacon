@@ -52,6 +52,14 @@ public class LocationsAdapter extends
         @Override
         public void onClick(View v) {
             Intent mapIntent = new Intent(context, LocationMapActivity.class);
+
+            // Extract latitude and longitude from text views
+            double latitude = Double.parseDouble(latitudeTextView.getText().toString().replace("Latitude: ", ""));
+            double longitude = Double.parseDouble(longitudeTextView.getText().toString().replace("Longitude: ", ""));
+
+            mapIntent.putExtra("latitude", latitude);
+            mapIntent.putExtra("longitude", longitude);
+
             context.startActivity(mapIntent);
         }
     }

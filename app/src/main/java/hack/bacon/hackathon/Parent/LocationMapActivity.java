@@ -15,11 +15,18 @@ import hack.bacon.hackathon.R;
 public class LocationMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private double mLatitude;
+    private double mLongitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_map);
+
+        // Obtain the longitude and latitude
+        mLatitude = getIntent().getDoubleExtra("latitude", 51.5072);
+        mLongitude = getIntent().getDoubleExtra("longitude", -0.1275);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -41,8 +48,9 @@ public class LocationMapActivity extends FragmentActivity implements OnMapReadyC
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng childPosition = new LatLng(mLatitude, mLongitude);
+        // TODO: Remove hardcode
+        mMap.addMarker(new MarkerOptions().position(childPosition).title("Position of Freddie Rawlins"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(childPosition));
     }
 }

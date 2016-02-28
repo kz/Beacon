@@ -1,5 +1,6 @@
 <resources>
     <string name="app_secret">788df22263</string>
+    <string name="google_app_id">winged-zodiac-123216</string>
     <string name="first_child_ren_tag">AFD158</string>
 
     <string name="app_name">Beacon</string>
