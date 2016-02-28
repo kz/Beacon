@@ -71,23 +71,24 @@ public class LocationsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_locations, container, false);
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.locationsRecyclerView);
-        mRecyclerView.setAdapter(new LocationsAdapter(mDataset));
+        mAdapter = new LocationsAdapter(mDataset);
+        mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setHasFixedSize(true);
 
         return rootView;
     }
 
-    // TODO: Remove hardcoded dataset
+/*    // TODO: Remove hardcoded dataset
     private void initDataset() {
         mDataset = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
             mDataset.add(new Location(51.5185059, -0.088304, System.currentTimeMillis()));
         }
-    }
+    }*/
 
-/*    private void initDataset() {
+    private void initDataset() {
         mDataset = new ArrayList<>();
 
         QredoClient client = Qredo.getInstance().getQredoClient();
@@ -116,8 +117,9 @@ public class LocationsFragment extends Fragment {
                     long timestamp = Long.parseLong(itemMetaData.get("timestamp"));
 
                     mDataset.add(new Location(latitude, longitude, timestamp));
+                    mAdapter.notifyItemInserted(mDataset.size() - 1);
                 }
             }
         });
-    }*/
+    }
 }
