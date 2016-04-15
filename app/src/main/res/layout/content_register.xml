@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Authentication.RegisterActivity"
+    tools:showIn="@layout/activity_register">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint=""
+        android:ems="10"
+        android:id="@+id/nameTextBox"
+        android:layout_marginBottom="29dp"
+        android:layout_above="@+id/usernameLabel"
+        android:layout_centerHorizontal="true"
+        android:editable="true"
+        android:enabled="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:ems="10"
+        android:id="@+id/usernameTextBox"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/passwordTextBox"
+        android:enabled="true"
+        android:editable="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint=""
+        android:ems="10"
+        android:id="@+id/passwordTextBox"
+        android:layout_below="@+id/passwordLabel"
+        android:layout_alignStart="@+id/nameTextBox"
+        android:editable="true"
+        android:enabled="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Name"
+        android:id="@+id/nameLabel"
+        android:layout_above="@+id/nameTextBox"
+        android:layout_alignStart="@+id/nameTextBox" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Username"
+        android:id="@+id/usernameLabel"
+        android:layout_above="@+id/usernameTextBox"
+        android:layout_alignStart="@+id/usernameTextBox" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Password"
+        android:id="@+id/passwordLabel"
+        android:layout_below="@+id/usernameTextBox"
+        android:layout_alignStart="@+id/passwordTextBox"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Beacon"
+        android:id="@+id/beaconLabel"
+        android:layout_above="@+id/nameLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/registerButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/passwordTextBox"
+        android:layout_alignStart="@+id/passwordTextBox"
+        android:layout_alignEnd="@+id/passwordTextBox"
+        android:id="@+id/parentOrChildGroup"
+        android:checkedButton="@+id/parentRadio">
+        <RadioButton android:id="@+id/parentRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parent"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/childRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Child"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+
+</RelativeLayout>

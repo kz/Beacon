@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hack.bacon.hackathon">
+    package="in.iamkelv.beacon">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -18,45 +22,54 @@
             android:name="com.qredo.device.android.service.LocalServiceImpl"
             android:enabled="true" />
 
-        <activity android:name=".Authentication.LoginActivity">
+        <meta-data
+            android:name="DATABASE"
+            android:value="beacon.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="in.iamkelv.beacon.Entities" />
+
+        <activity
+            android:name=".SplashScreen.SplashScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash_screen"
+            android:noHistory="true"
+            android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Authentication.RegisterActivity" />
-        <activity android:name=".Child.ChildMainActivity" />
-        <activity android:name=".Parent.ParentMainActivity" />
         <activity
-            android:name=".Parent.DetailedChildActivity"
-            android:label="@string/title_activity_detailed_child"
+            android:name=".Authentication.LoginActivity"
+            android:label="@string/title_activity_login_activity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-
         <activity
-            android:name=".Parent.LocationMapActivity"
-            android:label="@string/title_activity_location_map" />
+            android:name=".Authentication.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Parent.ParentActivity"
+            android:label="@string/title_activity_parent"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Child.ChildActivity"
+            android:label="@string/title_activity_child"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Parent.ParentDisplayRendezvousActivity" />
+        <activity android:name=".Parent.ParentAddChildDetailsActivity" />
+        <activity android:name=".Child.ChildEnterRendezvousActivity" />
 
         <service
-            android:name=".Location.LocationService"
-            android:exported="false" />
-
-        <receiver
-            android:name=".Location.AlarmReceiver"
-            android:process=":remote" />
-
-        <activity android:name=".Parent.GeofenceActivity"></activity>
+            android:name=".ListenerService.ListenerService"
+            android:exported="false"></service>
     </application>
 
 </manifest>

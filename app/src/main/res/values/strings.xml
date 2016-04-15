@@ -1,15 +1,35 @@
 <resources>
-    <string name="app_secret">788df22263</string>
-    <string name="google_app_id">winged-zodiac-123216</string>
-    <string name="first_child_ren_tag">AFD158</string>
-
     <string name="app_name">Beacon</string>
-    <string name="title_activity_parent_child">ParentChildActivity</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_detailed_child">DetailedChildActivity</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_location_map">Map</string>
+    <string name="app_secret">788df22263</string>
+    <string name="ren_tag">AFD158</string>
+    <string name="username">fred</string>
+    <string name="password">derf</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_login_activity">Login Activity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_parent">ParentActivity</string>
+    <string name="title_activity_register_activity">register_activity</string>
+    <string name="title_activity_child">ChildActivity</string>
+    <string name="title_activity_child_work_flow_view">ChildWorkFlowView</string>
+    <string name="title_activity_parent_work_flow_view">ParentWorkFlowView</string>
 </resources>
